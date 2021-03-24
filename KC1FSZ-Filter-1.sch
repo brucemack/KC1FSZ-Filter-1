@@ -206,17 +206,6 @@ F 3 "" H 9550 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+5VA #PWR016
-U 1 1 606B8AC0
-P 10050 2500
-F 0 "#PWR016" H 10050 2350 50  0001 C CNN
-F 1 "+5VA" H 10065 2673 50  0000 C CNN
-F 2 "" H 10050 2500 50  0001 C CNN
-F 3 "" H 10050 2500 50  0001 C CNN
-	1    10050 2500
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C11
 U 1 1 606B8AD6
 P 10300 2750
@@ -227,11 +216,6 @@ F 3 "~" H 10300 2750 50  0001 C CNN
 	1    10300 2750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10050 2500 10050 2600
-Wire Wire Line
-	10300 2600 10050 2600
-Connection ~ 10050 2600
 $Comp
 L power:GNDA #PWR018
 U 1 1 606B8AF2
@@ -532,8 +516,6 @@ Wire Wire Line
 Wire Wire Line
 	9750 2400 9750 2600
 Wire Wire Line
-	9750 2600 10050 2600
-Wire Wire Line
 	9550 1500 9550 1450
 Wire Wire Line
 	9550 1450 9750 1450
@@ -659,17 +641,6 @@ $EndComp
 Wire Wire Line
 	2950 5200 3250 5200
 Connection ~ 2950 5200
-$Comp
-L Connector_Generic:Conn_02x02_Odd_Even J4
-U 1 1 6074F67C
-P 9600 5250
-F 0 "J4" H 9650 5467 50  0000 C CNN
-F 1 "Conn_02x02_Odd_Even" H 9650 5376 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" H 9600 5250 50  0001 C CNN
-F 3 "~" H 9600 5250 50  0001 C CNN
-	1    9600 5250
-	1    0    0    -1  
-$EndComp
 Text GLabel 9150 5250 0    50   Input ~ 0
 TX_OUT
 Wire Wire Line
@@ -814,4 +785,71 @@ Wire Wire Line
 	9200 2750 9200 3000
 Wire Wire Line
 	9200 3200 9200 3500
+Wire Wire Line
+	9750 2600 10100 2600
+$Comp
+L power:+5VD #PWR0101
+U 1 1 60705AF5
+P 10100 2450
+F 0 "#PWR0101" H 10100 2300 50  0001 C CNN
+F 1 "+5VD" H 10115 2623 50  0000 C CNN
+F 2 "" H 10100 2450 50  0001 C CNN
+F 3 "" H 10100 2450 50  0001 C CNN
+	1    10100 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 2450 10100 2600
+Connection ~ 10100 2600
+Wire Wire Line
+	10100 2600 10300 2600
+Text Notes 9200 1300 0    50   ~ 0
+NOTE: Different power rail.
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J4
+U 1 1 6070C72B
+P 9600 5250
+F 0 "J4" H 9650 5567 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 9650 5476 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 9600 5250 50  0001 C CNN
+F 3 "~" H 9600 5250 50  0001 C CNN
+	1    9600 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VD #PWR0102
+U 1 1 6070D899
+P 9100 4850
+F 0 "#PWR0102" H 9100 4700 50  0001 C CNN
+F 1 "+5VD" H 9115 5023 50  0000 C CNN
+F 2 "" H 9100 4850 50  0001 C CNN
+F 3 "" H 9100 4850 50  0001 C CNN
+	1    9100 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9100 4850 9100 5150
+Wire Wire Line
+	9100 5150 9400 5150
+Wire Wire Line
+	9900 5150 10150 5150
+Wire Wire Line
+	10150 5150 10150 5250
+Connection ~ 10150 5250
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 60713A81
+P 8750 4950
+F 0 "#FLG0101" H 8750 5025 50  0001 C CNN
+F 1 "PWR_FLAG" H 8750 5123 50  0000 C CNN
+F 2 "" H 8750 4950 50  0001 C CNN
+F 3 "~" H 8750 4950 50  0001 C CNN
+	1    8750 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8750 4950 8750 5150
+Wire Wire Line
+	8750 5150 9100 5150
+Connection ~ 9100 5150
 $EndSCHEMATC
